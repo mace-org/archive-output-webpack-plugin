@@ -1,11 +1,12 @@
 {
   "name": "archive-output-webpack-plugin",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/mace-org/archive-output-webpack-plugin.git",
   "author": "mace <zhzjacky@163.com>",
   "license": "MIT",
   "scripts": {
+    "build": "tsc",
     "test": "jest --coverage"
   },
   "devDependencies": {
