@@ -6,7 +6,7 @@
   "author": "mace <zhzjacky@163.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
