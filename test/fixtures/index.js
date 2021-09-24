@@ -1,2 +1,3 @@
-const result = require('./foo')(3, 4);
-export default result;
+export default function () {
+    return require('./foo.js').default(3, 4)
+}

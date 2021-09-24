@@ -3,6 +3,8 @@ import webpack from 'webpack';
 import fs from "fs";
 import path from "path";
 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 async function remove(file: string) {
     if (fs.existsSync(file)) {
         if ((await fs.promises.stat(file)).isDirectory()) {
@@ -23,7 +25,8 @@ function createCompiler() {
         entry: {
             entry1: './fixtures/index.js',
             entry2: './fixtures/foo.js'
-        }
+        },
+        plugins: [new HtmlWebpackPlugin({title: 'archive output webpack plugin'})]
     });
 }
 
