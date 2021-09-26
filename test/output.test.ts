@@ -51,26 +51,26 @@ async function testOutput(type: 'war' | 'zip' | 'tar' | 'tgz') {
     expect(keys[0]).toEqual(`dist.${type}`);
 }
 
-describe('output archive file', () => {
+describe('output archive file tests', () => {
 
     beforeAll(async () => {
         const compiler = createCompiler();
         await remove(compiler.outputPath);
     })
 
-    test('should output file "dist.war"', async () => {
+    it('should output file "dist.war"', async () => {
         await testOutput('war')
     });
 
-    test('should output file "dist.zip"', async () => {
+    it('should output file "dist.zip"', async () => {
         await testOutput('zip')
     });
 
-    test('should output file "dist.tar"', async () => {
+    it('should output file "dist.tar"', async () => {
         await testOutput('tar')
     });
 
-    test('should output file "dist.tgz"', async () => {
+    it('should output file "dist.tgz"', async () => {
         await testOutput('tgz')
     });
 

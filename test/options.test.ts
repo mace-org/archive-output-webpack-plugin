@@ -1,6 +1,6 @@
 import {ArchiveOutputWebpackPlugin} from '../src';
 
-describe('archive type and name options', () => {
+describe('archive type and name options tests', () => {
 
     test('default archive type and name', () => {
         const plugin = new ArchiveOutputWebpackPlugin();
