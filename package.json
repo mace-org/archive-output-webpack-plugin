@@ -1,6 +1,6 @@
 {
   "name": "archive-output-webpack-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
@@ -11,14 +11,15 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "yarn run build",
     "test": "jest --coverage"
+  },
+  "dependencies": {
+    "compressing": "^1.5.1"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "@types/webpack": "4.41.26",
     "@types/webpack-sources": "^3.2.0",
-    "compressing": "^1.5.1",
     "html-webpack-plugin": "4",
     "jest": "^27.2.1",
     "ts-jest": "^27.0.5",
