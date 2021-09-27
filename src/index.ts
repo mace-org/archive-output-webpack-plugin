@@ -67,7 +67,7 @@ export class ArchiveOutputWebpackPlugin implements webpack.Plugin {
                     const buffer = Buffer.concat(buffers);
                     const outFile = this.archiveName;
                     compilation.assets[outFile] = new RawSource(buffer as any);
-                    compilation.compiler.getInfrastructureLogger(_name).info('已生成部署包：' + outFile);
+                    compilation.compiler.getInfrastructureLogger(_name).info('emit war asset: ' + outFile);
                     callback();
                 });
         });
