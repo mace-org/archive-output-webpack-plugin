@@ -13,9 +13,9 @@ interface ICompressionStream extends ReadStream {
     addEntry(entry: Buffer | ReadStream, opts: streamEntryOpts): void
 }
 
-const _name = 'archive-output-webpack-plugin';
-
 export class ArchiveOutputWebpackPlugin implements webpack.Plugin {
+
+    public static readonly pluginName = 'archive-output-webpack-plugin';
 
     private _options: Required<WebpackArchiveOutputOptions>;
 
@@ -52,7 +52,7 @@ export class ArchiveOutputWebpackPlugin implements webpack.Plugin {
 
     apply(compiler: webpack.Compiler): void {
 
-        compiler.hooks.emit.tapAsync(_name, (compilation, callback) => {
+        compiler.hooks.emit.tapAsync(ArchiveOutputWebpackPlugin.pluginName, (compilation, callback) => {
 
             const stream = this.creatStream();
             for (const key in compilation.assets) {
@@ -67,7 +67,7 @@ export class ArchiveOutputWebpackPlugin implements webpack.Plugin {
                     const buffer = Buffer.concat(buffers);
                     const outFile = this.archiveName;
                     compilation.assets[outFile] = new RawSource(buffer as any);
-                    compilation.compiler.getInfrastructureLogger(_name).info('emit war asset: ' + outFile);
+                    compilation.compiler.getInfrastructureLogger(ArchiveOutputWebpackPlugin.pluginName).info('emit war asset: ' + outFile);
                     callback();
                 });
         });

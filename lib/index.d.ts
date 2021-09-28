@@ -10,6 +10,7 @@ interface ICompressionStream extends ReadStream {
     addEntry(entry: Buffer | ReadStream, opts: streamEntryOpts): void;
 }
 export declare class ArchiveOutputWebpackPlugin implements webpack.Plugin {
+    static readonly pluginName = "archive-output-webpack-plugin";
     private _options;
     constructor(options?: WebpackArchiveOutputOptions);
     get archiveName(): string;
